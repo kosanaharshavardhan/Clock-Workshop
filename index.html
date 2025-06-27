@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TickTock Trends</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>TickTock Trends</h1>
+    <button id="themeToggle">Toggle Theme</button>
+  </header>
+
+  <main class="clock-grid">
+    <!-- Clock items (example of one clock)-->
+    <div class="clock-card" data-id="clock1">
+      <div class="clock analog" id="clock1">
+        <div class="hand hour"></div>
+        <div class="hand minute"></div>
+        <div class="hand second"></div>
+      </div>
+      <button class="upvote">Upvote <span class="count">0</span></button>
+    </div>
+    <!-- Repeat for 14 more clocks with different styles using classes -->
+  </main>
+
+  <footer>
+    <p>&copy; 2025 TickTock Trends</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
