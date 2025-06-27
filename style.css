@@ -3,29 +3,66 @@ body {
   margin: 0;
   font-family: sans-serif;
   transition: background-color 0.8s ease;
+  background-color: #fefefe;
+  overflow-x: hidden;
 }
 
 header {
   text-align: center;
   padding: 1em;
+  background: linear-gradient(45deg, #4facfe, #00f2fe);
+  color: white;
+  animation: slideInDown 1s ease;
+}
+
+@keyframes slideInDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+#colorToggle {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.5s;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0,0,0,0.2); }
+  70% { box-shadow: 0 0 0 10px rgba(0,0,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
 }
 
 .clock-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 2rem;
   padding: 2rem;
 }
 
 .clock-card {
   text-align: center;
-  transition: transform 0.5s;
+  transition: transform 0.5s, box-shadow 0.5s;
   animation: float 6s ease-in-out infinite;
+  border-radius: 20px;
+  padding: 1rem;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.clock-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-8px); }
 }
 
 .clock {
@@ -35,14 +72,13 @@ header {
   border-radius: 50%;
   position: relative;
   margin: auto;
-  background: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  transition: transform 1s ease;
+  background: radial-gradient(circle, white 60%, #f0f0f0);
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+  transition: all 1s ease;
 }
 
 .hand {
   position: absolute;
-  background-color: black;
   transform-origin: bottom center;
   left: 50%;
   transform: translateX(-50%) rotate(0deg);
@@ -53,19 +89,21 @@ header {
   width: 6px;
   height: 50px;
   top: 30px;
+  background-color: #222;
 }
 
 .hand.minute {
   width: 4px;
   height: 70px;
   top: 10px;
+  background-color: #444;
 }
 
 .hand.second {
   width: 2px;
   height: 80px;
   top: 0;
-  background: red;
+  background: crimson;
 }
 
 .numbers {
@@ -73,12 +111,13 @@ header {
   width: 100%;
   height: 100%;
   font-weight: bold;
-  color: black;
+  color: #222;
 }
 
 .num {
   position: absolute;
   font-size: 1.2em;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
 
 .num12 { top: 5px; left: 50%; transform: translateX(-50%); }
@@ -86,19 +125,46 @@ header {
 .num6  { bottom: 5px; left: 50%; transform: translateX(-50%); }
 .num9  { top: 50%; left: 5px; transform: translateY(-50%); }
 
-/* Colors for each clock */
-.clock1  { border-color: #FF5733; }
-.clock2  { border-color: #33C1FF; }
-.clock3  { border-color: #8E44AD; }
-.clock4  { border-color: #2ECC71; }
-.clock5  { border-color: #F1C40F; }
-.clock6  { border-color: #E67E22; }
-.clock7  { border-color: #1ABC9C; }
-.clock8  { border-color: #3498DB; }
-.clock9  { border-color: #9B59B6; }
-.clock10 { border-color: #E74C3C; }
-.clock11 { border-color: #34495E; }
-.clock12 { border-color: #2C3E50; }
-.clock13 { border-color: #27AE60; }
-.clock14 { border-color: #F39C12; }
-.clock15 { border-color: #D35400; }
+/* Clock color themes */
+.clock1  { border-color: #FF6B6B; background: radial-gradient(#fff, #ffe0e0); }
+.clock2  { border-color: #4ECDC4; background: radial-gradient(#fff, #d7fdfb); }
+.clock3  { border-color: #1A535C; background: radial-gradient(#fff, #d5eff0); }
+.clock4  { border-color: #F7B32B; background: radial-gradient(#fff, #fff3d4); }
+.clock5  { border-color: #6A0572; background: radial-gradient(#fff, #f5ddfc); }
+.clock6  { border-color: #00A8E8; background: radial-gradient(#fff, #dff3ff); }
+.clock7  { border-color: #A2D729; background: radial-gradient(#fff, #edffd4); }
+.clock8  { border-color: #F25F5C; background: radial-gradient(#fff, #ffdede); }
+.clock9  { border-color: #FFE156; background: radial-gradient(#fff, #fff9dd); }
+.clock10 { border-color: #3B3B98; background: radial-gradient(#fff, #dfe1ff); }
+.clock11 { border-color: #8D8741; background: radial-gradient(#fff, #f0f0dc); }
+.clock12 { border-color: #C3073F; background: radial-gradient(#fff, #ffdbe5); }
+.clock13 { border-color: #00A676; background: radial-gradient(#fff, #d0ffee); }
+.clock14 { border-color: #7400B8; background: radial-gradient(#fff, #e9ddff); }
+.clock15 { border-color: #EF476F; background: radial-gradient(#fff, #ffd8e4); }
+
+.upvote {
+  margin-top: 1rem;
+  padding: 6px 12px;
+  border: none;
+  background: #ff4c60;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.upvote:hover {
+  transform: scale(1.1);
+  background: #ff1f40;
+}
+
+/* Highlight upvote animation */
+.upvote:active {
+  animation: clickFlash 0.3s;
+}
+
+@keyframes clickFlash {
+  0% { background: #fff; color: #ff1f40; }
+  100% { background: #ff1f40; color: #fff; }
+}
