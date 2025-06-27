@@ -1,7 +1,7 @@
 const colors = [
-  '#FF5733', '#33C1FF', '#8E44AD', '#2ECC71', '#F1C40F',
-  '#E67E22', '#1ABC9C', '#3498DB', '#9B59B6', '#E74C3C',
-  '#34495E', '#2C3E50', '#27AE60', '#F39C12', '#D35400'
+  '#FF6B6B', '#4ECDC4', '#1A535C', '#F7B32B', '#6A0572',
+  '#00A8E8', '#A2D729', '#F25F5C', '#FFE156', '#3B3B98',
+  '#8D8741', '#C3073F', '#00A676', '#7400B8', '#EF476F'
 ];
 
 let currentColorIndex = 0;
@@ -17,20 +17,22 @@ function rotateHands(clockId) {
   const minute = now.getMinutes();
   const second = now.getSeconds();
 
-  const clock = document.getElementById(clockId);
-  if (!clock) return;
-
-  const hourHand = clock.querySelector(".hour");
-  const minuteHand = clock.querySelector(".minute");
-  const secondHand = clock.querySelector(".second");
-
   const hourDeg = (hour % 12) * 30 + minute / 2;
   const minuteDeg = minute * 6;
   const secondDeg = second * 6;
 
-  hourHand.style.transform = `translateX(-50%) rotate(${hourDeg}deg)`;
-  minuteHand.style.transform = `translateX(-50%) rotate(${minuteDeg}deg)`;
-  secondHand.style.transform = `translateX(-50%) rotate(${secondDeg}deg)`;
+  const clock = document.getElementById(clockId);
+  if (!clock) return;
+
+  const hourHand = clock.querySelector('.hour');
+  const minuteHand = clock.querySelector('.minute');
+  const secondHand = clock.querySelector('.second');
+
+  if (hourHand && minuteHand && secondHand) {
+    hourHand.style.transform = `translateX(-50%) rotate(${hourDeg}deg)`;
+    minuteHand.style.transform = `translateX(-50%) rotate(${minuteDeg}deg)`;
+    secondHand.style.transform = `translateX(-50%) rotate(${secondDeg}deg)`;
+  }
 }
 
 function updateAllClocks() {
@@ -39,5 +41,23 @@ function updateAllClocks() {
   }
 }
 
+// Animate clock hands every second
 setInterval(updateAllClocks, 1000);
 updateAllClocks();
+
+// Upvote functionality using sessionStorage
+document.querySelectorAll('.upvote').forEach(button => {
+  const clockId = button.parentElement.dataset.id;
+  const countSpan = button.querySelector('.count');
+
+  // Load saved votes
+  const storedCount = sessionStorage.getItem(clockId);
+  if (storedCount) countSpan.textContent = storedCount;
+
+  button.addEventListener('click', () => {
+    let count = parseInt(countSpan.textContent);
+    count++;
+    countSpan.textContent = count;
+    sessionStorage.setItem(clockId, count);
+  });
+});
