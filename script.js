@@ -8,6 +8,26 @@
 
   let currentColorIndex = 0;
   const colorBtn = document.getElementById('colorToggle');
+  colorBtn.style.background = 'linear-gradient(135deg, #6a11cb, #2575fc)';
+  colorBtn.style.color = '#fff';
+  colorBtn.style.padding = '12px 24px';
+  colorBtn.style.borderRadius = '30px';
+  colorBtn.style.fontSize = '1rem';
+  colorBtn.style.border = 'none';
+  colorBtn.style.cursor = 'pointer';
+  colorBtn.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
+  colorBtn.style.transition = 'all 0.4s ease';
+
+  colorBtn.addEventListener('mouseover', () => {
+    colorBtn.style.transform = 'scale(1.05)';
+    colorBtn.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.3)';
+  });
+
+  colorBtn.addEventListener('mouseout', () => {
+    colorBtn.style.transform = 'scale(1)';
+    colorBtn.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
+  });
+
   colorBtn.addEventListener('click', () => {
     currentColorIndex = (currentColorIndex + 1) % colors.length;
     document.body.style.backgroundColor = colors[currentColorIndex];
