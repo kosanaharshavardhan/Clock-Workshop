@@ -1,124 +1,104 @@
-/* ====== Global Styles ====== */
+/* style.css */
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
-  transition: background-color 1s ease, color 1s ease;
-  overflow-x: hidden;
-}
-
-:root {
-  --bg: #f0f0f0;
-  --text: #111;
-  --primary: #0077ff;
-  --accent: #ff0080;
-}
-
-body.dark {
-  --bg: #121212;
-  --text: #eee;
-  --primary: #1e90ff;
-  --accent: #e91e63;
+  font-family: sans-serif;
+  transition: background-color 0.8s ease;
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: linear-gradient(45deg, var(--primary), var(--accent));
-  color: white;
-  animation: fadeInDown 1s ease-in;
-}
-
-h1 {
-  font-size: 2rem;
-  letter-spacing: 2px;
-}
-
-button {
-  background: transparent;
-  border: 2px solid white;
-  color: white;
-  padding: 0.5rem 1rem;
-  font-weight: bold;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.4s ease;
-}
-
-button:hover {
-  background: white;
-  color: var(--primary);
+  text-align: center;
+  padding: 1em;
 }
 
 .clock-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 2rem;
   padding: 2rem;
-  animation: fadeInUp 1.2s ease-in;
 }
 
 .clock-card {
-  background: linear-gradient(120deg, var(--primary), var(--accent));
-  padding: 1rem;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.5s ease;
   text-align: center;
-  color: white;
+  transition: transform 0.5s;
+  animation: float 6s ease-in-out infinite;
 }
 
-.clock-card:hover {
-  transform: scale(1.05) rotate(1deg);
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 .clock {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  margin: auto;
-  border: 10px solid white;
+  width: 180px;
+  height: 180px;
+  border: 10px solid;
   border-radius: 50%;
-  background: radial-gradient(circle at center, var(--bg), var(--accent));
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5);
-  animation: spinIn 1.5s ease;
+  position: relative;
+  margin: auto;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 1s ease;
 }
 
 .hand {
   position: absolute;
-  width: 50%;
-  height: 4px;
-  background: white;
-  top: 50%;
+  background-color: black;
+  transform-origin: bottom center;
   left: 50%;
-  transform-origin: left;
-  transform: rotate(0deg);
-  border-radius: 10px;
-  transition: all 0.05s ease-in-out;
+  transform: translateX(-50%) rotate(0deg);
+  transition: transform 0.5s ease-in-out;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #111;
-  color: white;
-  animation: fadeInUp 2s ease-in;
+.hand.hour {
+  width: 6px;
+  height: 50px;
+  top: 30px;
 }
 
-@keyframes fadeInDown {
-  from { transform: translateY(-20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+.hand.minute {
+  width: 4px;
+  height: 70px;
+  top: 10px;
 }
 
-@keyframes fadeInUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+.hand.second {
+  width: 2px;
+  height: 80px;
+  top: 0;
+  background: red;
 }
 
-@keyframes spinIn {
-  from { transform: scale(0.5) rotate(-180deg); opacity: 0; }
-  to { transform: scale(1) rotate(0); opacity: 1; }
+.numbers {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  color: black;
 }
+
+.num {
+  position: absolute;
+  font-size: 1.2em;
+}
+
+.num12 { top: 5px; left: 50%; transform: translateX(-50%); }
+.num3  { top: 50%; right: 5px; transform: translateY(-50%); }
+.num6  { bottom: 5px; left: 50%; transform: translateX(-50%); }
+.num9  { top: 50%; left: 5px; transform: translateY(-50%); }
+
+/* Colors for each clock */
+.clock1  { border-color: #FF5733; }
+.clock2  { border-color: #33C1FF; }
+.clock3  { border-color: #8E44AD; }
+.clock4  { border-color: #2ECC71; }
+.clock5  { border-color: #F1C40F; }
+.clock6  { border-color: #E67E22; }
+.clock7  { border-color: #1ABC9C; }
+.clock8  { border-color: #3498DB; }
+.clock9  { border-color: #9B59B6; }
+.clock10 { border-color: #E74C3C; }
+.clock11 { border-color: #34495E; }
+.clock12 { border-color: #2C3E50; }
+.clock13 { border-color: #27AE60; }
+.clock14 { border-color: #F39C12; }
+.clock15 { border-color: #D35400; }

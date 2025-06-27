@@ -9,135 +9,216 @@
 <body>
   <header>
     <h1>TickTock Trends</h1>
-    <button id="themeToggle">Toggle Theme</button>
+    <button id="colorToggle">Change Background Color</button>
   </header>
 
   <main class="clock-grid">
-    <!-- 15 Unique Clock Designs -->
-    <!-- Classic Analog -->
-    <div class="clock-card" data-id="clock1">
-      <div class="clock analog classic" id="clock1">
+    <!-- 15 Unique Clock Designs with visible hands and numbers -->
+    <!-- Clock structure repeated with different colors and IDs -->
+    <div class="clock-card clock1" data-id="clock1">
+      <div class="clock analog clock1" id="clock1">
+        <div class="numbers">
+          <span class="num num12">12</span>
+          <span class="num num3">3</span>
+          <span class="num num6">6</span>
+          <span class="num num9">9</span>
+        </div>
         <div class="hand hour"></div>
         <div class="hand minute"></div>
         <div class="hand second"></div>
       </div>
       <button class="upvote">Upvote <span class="count">0</span></button>
     </div>
-
-    <!-- Minimalist Thin -->
-    <div class="clock-card" data-id="clock2">
-      <div class="clock analog thin" id="clock2">
+    <div class="clock-card clock2" data-id="clock2">
+      <div class="clock analog clock2" id="clock2">
+        <div class="numbers">
+          <span class="num num12">12</span>
+          <span class="num num3">3</span>
+          <span class="num num6">6</span>
+          <span class="num num9">9</span>
+        </div>
         <div class="hand hour"></div>
         <div class="hand minute"></div>
         <div class="hand second"></div>
       </div>
       <button class="upvote">Upvote <span class="count">0</span></button>
     </div>
-
-    <!-- Neon Glow -->
-    <div class="clock-card" data-id="clock3">
-      <div class="clock analog neon" id="clock3">
+    <div class="clock-card clock3" data-id="clock3">
+      <div class="clock analog clock3" id="clock3">
+        <div class="numbers">
+          <span class="num num12">12</span>
+          <span class="num num3">3</span>
+          <span class="num num6">6</span>
+          <span class="num num9">9</span>
+        </div>
         <div class="hand hour"></div>
         <div class="hand minute"></div>
         <div class="hand second"></div>
       </div>
       <button class="upvote">Upvote <span class="count">0</span></button>
     </div>
-
-    <!-- Wooden Theme -->
-    <div class="clock-card" data-id="clock4">
-      <div class="clock analog wood" id="clock4">
+    <div class="clock-card clock4" data-id="clock4">
+      <div class="clock analog clock4" id="clock4">
+        <div class="numbers">
+          <span class="num num12">12</span>
+          <span class="num num3">3</span>
+          <span class="num num6">6</span>
+          <span class="num num9">9</span>
+        </div>
         <div class="hand hour"></div>
         <div class="hand minute"></div>
         <div class="hand second"></div>
       </div>
       <button class="upvote">Upvote <span class="count">0</span></button>
     </div>
-
-    <!-- Gradient Ring -->
-    <div class="clock-card" data-id="clock5">
-      <div class="clock analog gradient" id="clock5">
+    <div class="clock-card clock5" data-id="clock5">
+      <div class="clock analog clock5" id="clock5">
+        <div class="numbers">
+          <span class="num num12">12</span>
+          <span class="num num3">3</span>
+          <span class="num num6">6</span>
+          <span class="num num9">9</span>
+        </div>
         <div class="hand hour"></div>
         <div class="hand minute"></div>
         <div class="hand second"></div>
       </div>
       <button class="upvote">Upvote <span class="count">0</span></button>
     </div>
-
-    <!-- Glass Transparent -->
-    <div class="clock-card" data-id="clock6">
-      <div class="clock analog glass" id="clock6">
+    <div class="clock-card clock6" data-id="clock6">
+      <div class="clock analog clock6" id="clock6">
+        <div class="numbers">
+          <span class="num num12">12</span>
+          <span class="num num3">3</span>
+          <span class="num num6">6</span>
+          <span class="num num9">9</span>
+        </div>
         <div class="hand hour"></div>
         <div class="hand minute"></div>
         <div class="hand second"></div>
       </div>
       <button class="upvote">Upvote <span class="count">0</span></button>
     </div>
-
-    <!-- Gear Steampunk -->
-    <div class="clock-card" data-id="clock7">
-      <div class="clock analog gear" id="clock7">
+    <div class="clock-card clock7" data-id="clock7">
+      <div class="clock analog clock7" id="clock7">
+        <div class="numbers">
+          <span class="num num12">12</span>
+          <span class="num num3">3</span>
+          <span class="num num6">6</span>
+          <span class="num num9">9</span>
+        </div>
         <div class="hand hour"></div>
         <div class="hand minute"></div>
         <div class="hand second"></div>
       </div>
       <button class="upvote">Upvote <span class="count">0</span></button>
     </div>
-
-    <!-- Basic Digital -->
-    <div class="clock-card" data-id="clock8">
-      <div class="clock digital basic" id="clock8"></div>
-      <button class="upvote">Upvote <span class="count">0</span></button>
-    </div>
-
-    <!-- Flip Clock -->
-    <div class="clock-card" data-id="clock9">
-      <div class="clock digital flip" id="clock9"></div>
-      <button class="upvote">Upvote <span class="count">0</span></button>
-    </div>
-
-    <!-- Text Typo Clock -->
-    <div class="clock-card" data-id="clock10">
-      <div class="clock digital text" id="clock10"></div>
-      <button class="upvote">Upvote <span class="count">0</span></button>
-    </div>
-
-    <!-- LED Matrix -->
-    <div class="clock-card" data-id="clock11">
-      <div class="clock digital matrix" id="clock11"></div>
-      <button class="upvote">Upvote <span class="count">0</span></button>
-    </div>
-
-    <!-- Analog + Digital Hybrid -->
-    <div class="clock-card" data-id="clock12">
-      <div class="clock hybrid" id="clock12">
+    <div class="clock-card clock8" data-id="clock8">
+      <div class="clock analog clock8" id="clock8">
+        <div class="numbers">
+          <span class="num num12">12</span>
+          <span class="num num3">3</span>
+          <span class="num num6">6</span>
+          <span class="num num9">9</span>
+        </div>
         <div class="hand hour"></div>
         <div class="hand minute"></div>
         <div class="hand second"></div>
-        <div class="digital-time"></div>
       </div>
       <button class="upvote">Upvote <span class="count">0</span></button>
     </div>
-
-    <!-- Orbit Planet Clock -->
-    <div class="clock-card" data-id="clock13">
-      <div class="clock orbit" id="clock13">
-        <div class="planet hour"></div>
-        <div class="planet minute"></div>
-        <div class="planet second"></div>
+    <div class="clock-card clock9" data-id="clock9">
+      <div class="clock analog clock9" id="clock9">
+        <div class="numbers">
+          <span class="num num12">12</span>
+          <span class="num num3">3</span>
+          <span class="num num6">6</span>
+          <span class="num num9">9</span>
+        </div>
+        <div class="hand hour"></div>
+        <div class="hand minute"></div>
+        <div class="hand second"></div>
       </div>
       <button class="upvote">Upvote <span class="count">0</span></button>
     </div>
-
-    <!-- Pixel Dots Clock -->
-    <div class="clock-card" data-id="clock14">
-      <div class="clock pixel" id="clock14"></div>
+    <div class="clock-card clock10" data-id="clock10">
+      <div class="clock analog clock10" id="clock10">
+        <div class="numbers">
+          <span class="num num12">12</span>
+          <span class="num num3">3</span>
+          <span class="num num6">6</span>
+          <span class="num num9">9</span>
+        </div>
+        <div class="hand hour"></div>
+        <div class="hand minute"></div>
+        <div class="hand second"></div>
+      </div>
       <button class="upvote">Upvote <span class="count">0</span></button>
     </div>
-
-    <!-- Flower Petal Clock -->
-    <div class="clock-card" data-id="clock15">
-      <div class="clock petal" id="clock15">
+    <div class="clock-card clock11" data-id="clock11">
+      <div class="clock analog clock11" id="clock11">
+        <div class="numbers">
+          <span class="num num12">12</span>
+          <span class="num num3">3</span>
+          <span class="num num6">6</span>
+          <span class="num num9">9</span>
+        </div>
+        <div class="hand hour"></div>
+        <div class="hand minute"></div>
+        <div class="hand second"></div>
+      </div>
+      <button class="upvote">Upvote <span class="count">0</span></button>
+    </div>
+    <div class="clock-card clock12" data-id="clock12">
+      <div class="clock analog clock12" id="clock12">
+        <div class="numbers">
+          <span class="num num12">12</span>
+          <span class="num num3">3</span>
+          <span class="num num6">6</span>
+          <span class="num num9">9</span>
+        </div>
+        <div class="hand hour"></div>
+        <div class="hand minute"></div>
+        <div class="hand second"></div>
+      </div>
+      <button class="upvote">Upvote <span class="count">0</span></button>
+    </div>
+    <div class="clock-card clock13" data-id="clock13">
+      <div class="clock analog clock13" id="clock13">
+        <div class="numbers">
+          <span class="num num12">12</span>
+          <span class="num num3">3</span>
+          <span class="num num6">6</span>
+          <span class="num num9">9</span>
+        </div>
+        <div class="hand hour"></div>
+        <div class="hand minute"></div>
+        <div class="hand second"></div>
+      </div>
+      <button class="upvote">Upvote <span class="count">0</span></button>
+    </div>
+    <div class="clock-card clock14" data-id="clock14">
+      <div class="clock analog clock14" id="clock14">
+        <div class="numbers">
+          <span class="num num12">12</span>
+          <span class="num num3">3</span>
+          <span class="num num6">6</span>
+          <span class="num num9">9</span>
+        </div>
+        <div class="hand hour"></div>
+        <div class="hand minute"></div>
+        <div class="hand second"></div>
+      </div>
+      <button class="upvote">Upvote <span class="count">0</span></button>
+    </div>
+    <div class="clock-card clock15" data-id="clock15">
+      <div class="clock analog clock15" id="clock15">
+        <div class="numbers">
+          <span class="num num12">12</span>
+          <span class="num num3">3</span>
+          <span class="num num6">6</span>
+          <span class="num num9">9</span>
+        </div>
         <div class="hand hour"></div>
         <div class="hand minute"></div>
         <div class="hand second"></div>
