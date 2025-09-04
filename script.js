@@ -1,5 +1,5 @@
 // script.js
-
+// disco
   const colors = [
     '#FF6B6B', '#4ECDC4', '#1A535C', '#F7B32B', '#6A0572',
     '#00A8E8', '#A2D729', '#F25F5C', '#FFE156', '#3B3B98',
